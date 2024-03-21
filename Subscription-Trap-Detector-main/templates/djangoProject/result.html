@@ -1,0 +1,270 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription Trap Detector</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+  <style>
+     
+   body::before {
+   content: "";
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url("{%static '/sahib/images/bg.jpeg' %}");
+   background-size: cover;
+   background-position: center;
+   {#background-repeat: no-repeat;#}
+   opacity: 0.9;
+   z-index: -1;
+}
+
+
+
+
+     body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Playfair Display', serif;
+        {# background-image: url("");#}
+        {#background-size: cover;#}
+        {##}
+        {#height:100vh;#}
+        {#background-position: center;#}
+        {#background-repeat: no-repeat;#}
+        {# background-image: linear-gradient(to right,  #cb5d31,rgb(239, 172, 95));#}
+        
+         width:100vw;
+        color: white;
+      }
+
+
+     header {
+       position:sticky;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        align-items: center;
+     }
+
+
+     header img {
+        width: 120px;
+        filter: invert(100%);
+     }
+
+
+     header h1 {
+        font-size: 2em;
+        margin: 0;
+     }
+   
+     nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+       
+     }
+
+
+     nav li {
+        margin: 0 15px;
+        position: sticky;
+     }
+
+
+     nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2em;
+        transition: color 0.3s;
+     }
+
+
+     nav a:hover {
+       color: #ff4900;
+     }
+
+
+     .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+     }
+
+
+     .content {
+        text-align: center;
+     }
+     .highlight{
+        background-color:yellow;
+     }
+
+
+     .content h1 {
+        font-size: 5em;
+        color: #ff4900;
+        font-weight: bold;
+     }
+
+
+     .content p {
+        font-size: 1.2em;
+        margin: 15px 0;
+     }
+
+
+     #yo {
+        padding: 50px;
+        background-image: linear-gradient(to right,  #cb5d31,rgb(239, 172, 95));
+
+
+        border-radius: 10px;
+        margin-top: 30px;
+        color:rgb(3, 0, 0);
+        font-size: 1.2em;
+
+
+     }
+
+
+     .bg a
+     {
+       color:#ebeb46;
+       text-decoration: none;
+     }
+     .bg a:hover
+     {
+       text-decoration: underline;
+
+
+
+
+     }
+
+
+     .heading
+     {
+       text-align: center;
+       margin-bottom:24px;
+       font-size: 50px;
+     }
+     .me
+     {
+       text-align: center;
+       margin-top: 12px;
+       margin-bottom: 12px;
+     }
+     .too
+     {
+        {#height: 100vh;#}
+         background-image: linear-gradient(to right,  #cb5d31,rgb(239, 172, 95));
+        
+         background-size: cover;
+     }
+     .t1
+     {
+        text-align: center;
+       margin-top: 54px;
+       margin-bottom: 32px;
+
+
+     }
+     .text
+     {
+        margin-top:24px;
+         background-image: linear-gradient(to right,  #cb5d31,rgb(239, 172, 95));
+         {#height:100%;#}
+         background-size: cover;
+
+
+     }
+      .image1
+    {
+
+
+       display: flex;
+    }
+    img
+    {
+       width:31vw;
+       margin: 3px;
+        height:288px;
+
+
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+     <div>
+{#        <div class="image"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="30" fill="currentColor" class="bi bi-bug" viewBox="0 0 16 16">#}
+{#            <path d="M4.355.522a.5.5 0 0 1 .623.333l.291.956A5 5 0 0 1 8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41 1.352A5 5 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l-.41-1.352a.5.5 0 0 1 .333-.623M4 7v4a4 4 0 0 0 3.5 3.97V7zm4.5 0v7.97A4 4 0 0 0 12 11V7zM12 6a4 4 0 0 0-1.334-2.982A3.98 3.98 0 0 0 8 2a3.98 3.98 0 0 0-2.667 1.018A4 4 0 0 0 4 6z"/>#}
+{#          </svg></div>#}
+        <h1>STD</h1>
+     </div>
+     <nav>
+        <ul class="nav">
+           <li><a href="#">Results</a></li>
+           <li><a href="#yo">Ideology</a></li>
+           <li><a href="#t">Text</a></li>
+        </ul>
+     </nav>
+  </header>
+  <div class="container" >
+     <div class="content" id="hello">
+        <h1>Subscription Trap Detector</h1>
+        <p><strong>URL:</strong> {{ result.url }}</p>
+        <p><strong>Dictionary:</strong> {{ result.search_words }}</p>
+          <p><strong>Found Words:</strong> {{ result.found_words|default:"No words found" }}</p>
+         <p><strong>found lines :</strong> {{ result.found_lines }}</p>
+         
+     </div>
+  </div>
+  <div id="yo">
+   <h1 class="heading">Ideology</h1>
+
+
+
+
+  <div class="para">In a digital landscape inundated with enticing offers and subscription services, consumers often find themselves inadvertently ensnared in subscription traps. These traps exploit the complexity of terms and conditions, burying crucial information in fine print and leading users into recurring payment commitments without their full understanding or consent.
+
+
+   Our Subscription Trap Detector project is driven by a commitment to empower consumers and protect them from deceptive practices. The ideology guiding our endeavor revolves around three key principles:
+
+
+   <h4 class="me"> *Transparency and Informed Consent:*</h4>
+    <div class="too"><p>   We believe that consumers have the right to make informed decisions about their financial commitments. Our Subscription Trap Detector prioritizes transparency by scrutinizing terms and conditions, highlighting critical information, and providing users with a clear understanding of the implications before they subscribe to any service.Subscription Trap Detector is dedicated to prioritizing transparency as a fundamental pillar. This commitment is realized through a meticulous examination of terms and conditions, where we unearth critical details often concealed in the fine print. By presenting users with clear insights and a comprehensive understanding of subscription implications before they commit to any service, we empower them to navigate the digital landscape with confidence and clarity.</p>
+   <div class="image1">
+    <div class="width"><img src="{% static '/sahib/images/article1.png'%}" alt=""></div>
+    <div class="width"><img src="{% static '/sahib/images/article2.png'%}" alt=""></div>
+    <div class="width"><img src="{% static '/sahib/images/article3.png'%}" alt=""></div>
+    <!-- <div class="width" id="two"><img src="lock.jpg" alt=""></div>
+    <div class="width" id="three"><img src="lock.jpg" alt=""></div> -->
+  </div>
+  </div>
+  </div>
+
+
+      <div class="text">
+     <h1 class="t1" id="t">Text on which it was run</h1>
+     <p class="too"> {{ result.highlighted_text | safe}}</p></div>
+    </div>
+
+
+</body>
+</html>
+
